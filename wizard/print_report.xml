@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_inbaocao_form" model="ir.ui.view">
+            <field name="name">In báo cáo</field>
+            <field name="model">ptd.print.report</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="type" />
+                        <field name="record_id" />
+                    </group>
+                    <footer>
+                        <button string="Định dạng Excel" name="print_report_csv"
+                                    type="object" class="oe_highlight"/>
+                        <button string ="Định dạng Pdf" type="object" name ="print_report_pdf" class="oe_highlight"/>
+                        <button string ="CANCEL" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="ptd_print_act" model="ir.actions.act_window">
+            <field name="name">In báo cáo</field>
+            <field name="res_model">ptd.print.report</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+<!--            <field name="binding_model_id" ref = "model_ptd_print_report"/>-->
+        </record>
+
+
+    </data>
+</odoo>
